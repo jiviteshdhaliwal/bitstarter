@@ -2,10 +2,8 @@ var express = require('express');
 var fs = require('fs');
 var app = express.createServer(express.logger());
 
-var stringBuf = fs.readFileSync('/home/jivitesh/startup/bitstarter/index.html');
-
 app.get('/home/jivitesh/startup/bitstarter/index.html', function(request, response) {
-  response.send("HELLO WORLD");
+  response.send(fs.readFileSync('index.html').toString());
 });
 
 var port = process.env.PORT || 5000;
