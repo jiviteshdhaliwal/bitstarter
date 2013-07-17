@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var app = express.createServer(express.logger());
 
-app.get('/home/jivitesh/startup/bitstarter/index.html', function(request, response) {
+app.get('index.html', function(request, response) {
   response.send(fs.readFileSync('index.html').toString());
 });
 
